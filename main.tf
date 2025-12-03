@@ -45,7 +45,7 @@ resource "azurerm_subnet" "subnet" {
   address_prefixes     = ["10.0.2.0/24"]
 
   // Service Endpoints allow Storage and SQL to communicate securely with this subnet
-  service_endpoints    = ["Microsoft.Sql", "Microsoft.Storage"]
+  service_endpoints = ["Microsoft.Sql", "Microsoft.Storage"]
 }
 
 // 4. Storage Account 
