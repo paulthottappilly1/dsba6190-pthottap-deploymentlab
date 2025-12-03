@@ -48,16 +48,15 @@ resource "azurerm_subnet" "subnet" {
   service_endpoints = ["Microsoft.Sql", "Microsoft.Storage"]
 }
 
-// 4. Storage Account 
+// 4. Storage Account
 resource "azurerm_storage_account" "storage" {
-  name                     = "sto${var.class_name}${var.student_name}${var.environment}${random_integer.deployment_id_suffix.result}"
+  name                     = "stodsba${var.student_name}${var.environment}${random_integer.deployment_id_suffix.result}"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
-  is_hns_enabled           = true # Required: Hierarchical Namespace
+  is_hns_enabled           = true
 
-  // Network Rules: Restrict access to the VNet [cite: 46]
   network_rules {
     default_action             = "Deny"
     virtual_network_subnet_ids = [azurerm_subnet.subnet.id]

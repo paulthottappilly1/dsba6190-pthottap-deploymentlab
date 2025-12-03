@@ -48,6 +48,6 @@ variable "class_name" {
 variable "admin_password" {
   description = "Password for the SQL Administrator"
   type        = string
-  default     = "paulssqldb" # Use a strong password here
+  default     = "MySecure$Lab2025!"
   sensitive   = true
 }
