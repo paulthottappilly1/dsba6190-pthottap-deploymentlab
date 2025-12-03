@@ -8,10 +8,9 @@ variable "tag_instructor" {
   default = "cford38"
 }
 
-
 variable "tag_semester" {
   type    = string
-  default = "fall2024"
+  default = "fall2025"
 }
 
 variable "location" {
@@ -37,11 +36,18 @@ variable "environment" {
 variable "student_name" {
   description = "Application Name"
   type        = string
-  default     = "cford38"
+  default     = "pthottap"
 }
 
 variable "class_name" {
   description = "Application Name"
   type        = string
   default     = "dsba6190"
+}
+
+variable "admin_password" {
+  description = "Password for the SQL Administrator"
+  type        = string
+  default     = "paulssqldb" # Use a strong password here
+  sensitive   = true
 }
